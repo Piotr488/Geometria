@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller" >
+<VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller" >
       <children>
       <GridPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="600.0">
         <columnConstraints>
@@ -30,7 +30,7 @@
                   <ToggleGroup fx:id="Figury" />
                </toggleGroup></RadioButton>
             <RadioButton fx:id="rb_figuryPrzestrzenne" mnemonicParsing="false" text="Figury Przestrzenne" toggleGroup="$Figury" GridPane.rowIndex="1" onAction="#changeCBContent" />
-            <ComboBox fx:id="cb_wyborFigury" prefWidth="150.0" GridPane.columnIndex="2" />
+            <ComboBox fx:id="cb_wyborFigury" prefWidth="150.0" GridPane.columnIndex="2" onAction="#setup"/>
             <ComboBox fx:id="cb_jednostki" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
             <Label text="Wybor Figury:" GridPane.columnIndex="1" />
             <Label text="Jednostki" GridPane.columnIndex="1" GridPane.rowIndex="1" />
@@ -38,7 +38,7 @@
       </GridPane>
       <Separator opacity="0.0" orientation="VERTICAL" prefHeight="20.0" />
       
-          <GridPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="600.0">
+          <GridPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="600.0" fx:id="setupPane">
               <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="10.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -81,10 +81,10 @@
             <Label text="Pole:" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
             <Label layoutX="10.0" layoutY="13.0" text="Obwod:" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
             <Label layoutX="210.0" layoutY="13.0" text="Objetosc:" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-            <TextField fx:id="tf_pole" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField fx:id="tf_obwod" layoutX="65.0" layoutY="21.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-            <TextField fx:id="tf_objetosc" layoutX="265.0" layoutY="21.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="109.0" text="Button" GridPane.columnIndex="1" />
+            <TextField fx:id="tf_pole" GridPane.columnIndex="1" GridPane.rowIndex="1" editable="false" />
+            <TextField fx:id="tf_obwod" layoutX="65.0" layoutY="21.0" GridPane.columnIndex="3" GridPane.rowIndex="1" editable="false" />
+            <TextField fx:id="tf_objetosc" layoutX="265.0" layoutY="21.0" GridPane.columnIndex="5" GridPane.rowIndex="1" editable="false" />
+            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="109.0" text="Oblicz" GridPane.columnIndex="1" />
          </children>
       </GridPane>
       </children>
