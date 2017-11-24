@@ -29,6 +29,7 @@ public class Controller {
     TextField tf_r;
     @FXML
     GridPane setupPane;
+    Setup set = new Setup();
 
     ObservableList<String> figuryPlaskie =  FXCollections.observableArrayList("Kwadrat","Prostokąt","Rownoleglobok","Trapez","Rab","Trojkat","kolo");
     ObservableList<String> figuryPrzestrzenne =  FXCollections.observableArrayList("Sześcian","Stożek","Kula");
@@ -54,8 +55,6 @@ public class Controller {
         }
     }
     public void setup(){
-        Setup set = new Setup();
-        TextField tf = new TextField();
         if (cb_wyborFigury.getSelectionModel().getSelectedIndex() == 1){
             set.setKwadrat(setupPane);
         }
@@ -95,12 +94,5 @@ public class Controller {
 //
 //        }
         System.out.println(cb_wyborFigury.getSelectionModel().getSelectedItem());
-    }
-    void disableTextFields(){
-        tf_a.setDisable(true);
-        tf_b.setDisable(true);
-        tf_c.setDisable(true);
-        tf_h.setDisable(true);
-        tf_r.setDisable(true);
     }
 }
