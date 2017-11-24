@@ -1,0 +1,7 @@
+kolo - 1
+trojkat - 4
+prostokat - 2 
+kwadrat - 1 
+trapez - 5
+rownoleglobok - 3
+romb - 3o

@@ -1,3 +1,5 @@
+package Klasy;
+
 import java.awt.*;
 
 public class Kwadrat extends FiguryPlaskie {
