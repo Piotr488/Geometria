@@ -1,6 +1,4 @@
-package Klasy;
-
-import java.awt.*;
+package Klasy.FiguryPlaskie;
 
 public abstract class FiguryPlaskie {
     double a,b,c,d,e,f,h,r;

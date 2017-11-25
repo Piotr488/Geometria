@@ -1,6 +1,4 @@
-package Klasy;
-
-import java.awt.*;
+package Klasy.FiguryPlaskie;
 
 public class Kwadrat extends FiguryPlaskie {
 
@@ -15,7 +13,7 @@ public class Kwadrat extends FiguryPlaskie {
 
     @Override
     public double obwod() {
-        return 0;
+        return 4*a;
     }
 
 

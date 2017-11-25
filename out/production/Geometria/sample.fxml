@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Klasy.Controller">
+<VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
       <children>
       <GridPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="600.0">
         <columnConstraints>
@@ -93,7 +93,7 @@
             <TextField fx:id="tf_pole" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <TextField fx:id="tf_obwod" editable="false" layoutX="65.0" layoutY="21.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
             <TextField fx:id="tf_objetosc" editable="false" layoutX="265.0" layoutY="21.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="109.0" text="Oblicz" GridPane.columnIndex="1" />
+            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="109.0" text="Oblicz" GridPane.columnIndex="1" onAction="#wynik"/>
          </children>
       </GridPane>
       </children>

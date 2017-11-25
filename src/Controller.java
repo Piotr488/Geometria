@@ -1,12 +1,11 @@
-package Klasy;
-
+import Klasy.FiguryPlaskie.Kwadrat;
+import Klasy.FiguryPlaskie.Oblicz;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.GridPane;
 
 public class Controller {
     @FXML
@@ -34,8 +33,10 @@ public class Controller {
     @FXML
     TextField tf_r;
     @FXML
-    GridPane setupPane;
-    Setup set = new Setup();
+    TextField tf_pole;
+    @FXML
+    TextField tf_obwod;
+    Oblicz oblicz = new Oblicz();
 
     ObservableList<String> figuryPlaskie =  FXCollections.observableArrayList("Kwadrat","Prostokąt","Równoległobok","Trapez","Romb","Trójkąt","Koło");
     ObservableList<String> figuryPrzestrzenne =  FXCollections.observableArrayList("Sześcian","Stożek","Kula");
@@ -110,50 +111,52 @@ public class Controller {
         }
         System.out.println(cb_wyborFigury.getSelectionModel().getSelectedItem());
     }
-
-//        switch(cb_wyborFigury.getSelectionModel().getSelectedIndex()){
-//            case 0: setup.setKwadrat();
-//                    break;
-//            case 1: disableTextFields();
-//                    tf_a.setDisable(false);
-//                    tf_b.setDisable(false);
-//                    break;
-//            case 2: disableTextFields();
-//                    tf_a.setEditable(false);
-//                    tf_b.setEditable(false);
-//                    tf_h.setEditable(false);
-//                    break;
-//            case 3: disableTextFields();
-//                    tf_a.setDisable(false);
-//                    tf_b.setDisable(false);
-//                    tf_c.setDisable(false);
-//                    //tf_d.setDisable(false);
-//                    tf_h.setDisable(false);
-//                    break;
-//            case 4: disableTextFields();
-//                    tf_a.setDisable(false);
-//                    //tf_e.setDisable(false);
-//                    //tf_f.setDisable(false);
-//                    break;
-//            case 5: disableTextFields();
-//                    tf_a.setDisable(false);
-//                    tf_b.setDisable(false);
-//                    tf_c.setDisable(false);
-//                    tf_h.setDisable(false);
-//                    break;
-//            case 6: disableTextFields();
-//                    tf_r.setDisable(false);
-//                    break;
-//
-//        }
-        void disableAllTF() {
-            tf_a.setDisable(true);
-            tf_b.setDisable(true);
-            tf_c.setDisable(true);
-            tf_d.setDisable(true);
-            tf_e.setDisable(true);
-            tf_f.setDisable(true);
-            tf_h.setDisable(true);
-            tf_r.setDisable(true);
-        }
+    void disableAllTF() {
+        tf_a.setDisable(true);
+        tf_a.clear();
+        tf_b.setDisable(true);
+        tf_b.clear();
+        tf_c.setDisable(true);
+        tf_c.clear();
+        tf_d.setDisable(true);
+        tf_d.clear();
+        tf_e.setDisable(true);
+        tf_e.clear();
+        tf_f.setDisable(true);
+        tf_f.clear();
+        tf_h.setDisable(true);
+        tf_h.clear();
+        tf_r.setDisable(true);
+        tf_r.clear();
     }
+   public void wynik(){
+       if (rb_figuryPlaskie.isSelected()) {
+           switch (cb_wyborFigury.getSelectionModel().getSelectedIndex()) {
+               case 0:
+                   oblicz.obliczKwadrat(tf_a,tf_pole,tf_obwod);
+                   break;
+               case 1:
+                   oblicz.obliczProstokat(tf_a,tf_b,tf_pole,tf_obwod);
+                   break;
+               case 2:
+                   oblicz.obliczRownoleglobok(tf_a,tf_b,tf_h,tf_pole,tf_obwod);
+                   break;
+               case 3:
+                   oblicz.obliczTrapez(tf_a,tf_b,tf_c,tf_d,tf_h,tf_pole,tf_obwod);
+                   break;
+               case 4:
+                   oblicz.obliczRomb(tf_a,tf_e,tf_f,tf_pole,tf_obwod);
+                   break;
+               case 5:
+                   oblicz.obliczTrojkat(tf_a,tf_b,tf_c,tf_h,tf_pole,tf_obwod);
+                   break;
+               case 6:
+                   oblicz.obliczKolo(tf_r,tf_pole,tf_obwod);
+                   break;
+           }
+       }
+       System.out.println(cb_wyborFigury.getSelectionModel().getSelectedItem());
+   }
+
+}
+
