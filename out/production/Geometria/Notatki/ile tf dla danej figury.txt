@@ -1,7 +1,9 @@
-kolo - 1
-trojkat - 4
-prostokat - 2 
-kwadrat - 1 
-trapez - 5
-rownoleglobok - 3
-romb - 3o
+kolo - r
+trojkat - a,b,c,h
+prostokat - a,b
+kwadrat - a
+trapez - a,b,c,d,h
+rownoleglobok - a,b,h
+romb - a,e,f
+
+a b c d e f h r

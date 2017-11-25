@@ -18,9 +18,5 @@ public class Kwadrat extends FiguryPlaskie {
         return 0;
     }
 
-    @Override
-    public void displayResult(TextField tf_pole, TextField tf_obwod) {
-        tf_pole.setText(""+pole());
-        tf_obwod.setText(""+obwod());
-    }
+
 }

@@ -24,6 +24,12 @@ public class Controller {
     @FXML
     TextField tf_c;
     @FXML
+    TextField tf_d;
+    @FXML
+    TextField tf_e;
+    @FXML
+    TextField tf_f;
+    @FXML
     TextField tf_h;
     @FXML
     TextField tf_r;
@@ -31,7 +37,7 @@ public class Controller {
     GridPane setupPane;
     Setup set = new Setup();
 
-    ObservableList<String> figuryPlaskie =  FXCollections.observableArrayList("Kwadrat","Prostokąt","Rownoleglobok","Trapez","Rab","Trojkat","kolo");
+    ObservableList<String> figuryPlaskie =  FXCollections.observableArrayList("Kwadrat","Prostokąt","Równoległobok","Trapez","Romb","Trójkąt","Koło");
     ObservableList<String> figuryPrzestrzenne =  FXCollections.observableArrayList("Sześcian","Stożek","Kula");
 
     ObservableList<String> jednostki =  FXCollections.observableArrayList("cm","mm");
@@ -42,6 +48,9 @@ public class Controller {
 
         cb_wyborFigury.getSelectionModel().selectFirst();
         cb_jednostki.getSelectionModel().selectFirst();
+
+        disableAllTF();
+        tf_a.setDisable(false);
     }
 
     public void changeCBContent(){
@@ -54,10 +63,54 @@ public class Controller {
             cb_wyborFigury.getSelectionModel().selectFirst();
         }
     }
-    public void setup(){
-        if (cb_wyborFigury.getSelectionModel().getSelectedIndex() == 1){
-            set.setKwadrat(setupPane);
+    public void setup() {
+        if (rb_figuryPlaskie.isSelected()) {
+            switch (cb_wyborFigury.getSelectionModel().getSelectedIndex()) {
+                case 0:
+                    disableAllTF();
+                    tf_a.setDisable(false);
+                    break;
+                case 1:
+                    disableAllTF();
+                    tf_a.setDisable(false);
+                    tf_b.setDisable(false);
+                    break;
+                case 2:
+                    disableAllTF();
+                    tf_a.setDisable(false);
+                    tf_b.setDisable(false);
+                    tf_h.setDisable(false);
+                    break;
+                case 3:
+                    disableAllTF();
+                    tf_a.setDisable(false);
+                    tf_b.setDisable(false);
+                    tf_c.setDisable(false);
+                    tf_d.setDisable(false);
+                    tf_h.setDisable(false);
+                    break;
+                case 4:
+                    disableAllTF();
+                    tf_a.setDisable(false);
+                    tf_e.setDisable(false);
+                    tf_f.setDisable(false);
+                    break;
+                case 5:
+                    disableAllTF();
+                    tf_a.setDisable(false);
+                    tf_b.setDisable(false);
+                    tf_c.setDisable(false);
+                    tf_h.setDisable(false);
+                    break;
+                case 6:
+                    disableAllTF();
+                    tf_r.setDisable(false);
+                    break;
+            }
         }
+        System.out.println(cb_wyborFigury.getSelectionModel().getSelectedItem());
+    }
+
 //        switch(cb_wyborFigury.getSelectionModel().getSelectedIndex()){
 //            case 0: setup.setKwadrat();
 //                    break;
@@ -93,6 +146,14 @@ public class Controller {
 //                    break;
 //
 //        }
-        System.out.println(cb_wyborFigury.getSelectionModel().getSelectedItem());
+        void disableAllTF() {
+            tf_a.setDisable(true);
+            tf_b.setDisable(true);
+            tf_c.setDisable(true);
+            tf_d.setDisable(true);
+            tf_e.setDisable(true);
+            tf_f.setDisable(true);
+            tf_h.setDisable(true);
+            tf_r.setDisable(true);
+        }
     }
-}
