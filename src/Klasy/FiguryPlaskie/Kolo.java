@@ -1,14 +1,15 @@
 package Klasy.FiguryPlaskie;
 
+import java.text.DecimalFormat;
+
 public class Kolo extends FiguryPlaskie {
+
     public Kolo(double r) {
         this.r = r;
     }
 
     @Override
-    public double pole() {
-        return pi*r*r;
-    }
+    public double pole() { return pi * r * r; }
 
     @Override
     public double obwod() {

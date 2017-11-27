@@ -1,4 +1,3 @@
-import Klasy.FiguryPlaskie.Kwadrat;
 import Klasy.FiguryPlaskie.Oblicz;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -6,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+
+import java.lang.reflect.InvocationTargetException;
 
 public class Controller {
     @FXML
@@ -36,6 +37,9 @@ public class Controller {
     TextField tf_pole;
     @FXML
     TextField tf_obwod;
+    @FXML
+    TextField tf_info;
+
     Oblicz oblicz = new Oblicz();
 
     ObservableList<String> figuryPlaskie =  FXCollections.observableArrayList("Kwadrat","Prostokąt","Równoległobok","Trapez","Romb","Trójkąt","Koło");
@@ -109,7 +113,6 @@ public class Controller {
                     break;
             }
         }
-        System.out.println(cb_wyborFigury.getSelectionModel().getSelectedItem());
     }
     void disableAllTF() {
         tf_a.setDisable(true);
@@ -133,30 +136,91 @@ public class Controller {
        if (rb_figuryPlaskie.isSelected()) {
            switch (cb_wyborFigury.getSelectionModel().getSelectedIndex()) {
                case 0:
-                   oblicz.obliczKwadrat(tf_a,tf_pole,tf_obwod);
-                   break;
+                   if (oblicz.validateString(tf_a)) {
+                       oblicz.obliczKwadrat(tf_a, tf_pole, tf_obwod);
+                       tf_info.setText("Obliczono pole i obwód Kwadratu");
+                       break;
+                   } else {
+                       tf_info.setText("Niepoprawne dane");
+                       tf_pole.clear();
+                       tf_obwod.clear();
+                       break;
+                   }
                case 1:
-                   oblicz.obliczProstokat(tf_a,tf_b,tf_pole,tf_obwod);
-                   break;
+                   if (oblicz.validateString(tf_a,tf_b)) {
+                       oblicz.obliczProstokat(tf_a, tf_b, tf_pole, tf_obwod);
+                       tf_info.setText("Obliczono pole i obwód Prostokątu");
+                       break;
+                   }
+                   else {
+                       tf_info.setText("Niepoprawne dane");
+                       tf_pole.clear();
+                       tf_obwod.clear();
+                       break;
+                   }
                case 2:
-                   oblicz.obliczRownoleglobok(tf_a,tf_b,tf_h,tf_pole,tf_obwod);
-                   break;
+                   if (oblicz.validateString(tf_a,tf_b,tf_h)) {
+                       oblicz.obliczRownoleglobok(tf_a,tf_b,tf_h,tf_pole,tf_obwod);
+                       tf_info.setText("Obliczono pole i obwód Równoległoboku");
+                       break;
+                   }
+                   else {
+                       tf_info.setText("Niepoprawne dane");
+                       tf_pole.clear();
+                       tf_obwod.clear();
+                       break;
+                   }
                case 3:
-                   oblicz.obliczTrapez(tf_a,tf_b,tf_c,tf_d,tf_h,tf_pole,tf_obwod);
-                   break;
+                   if (oblicz.validateString(tf_a,tf_b,tf_c,tf_d,tf_h)) {
+                       oblicz.obliczTrapez(tf_a,tf_b,tf_c,tf_d,tf_h,tf_pole,tf_obwod);
+                       tf_info.setText("Obliczono pole i obwód Trapezu");
+                       break;
+                   }
+                   else {
+                       tf_info.setText("Niepoprawne dane");
+                       tf_pole.clear();
+                       tf_obwod.clear();
+                       break;
+                   }
                case 4:
-                   oblicz.obliczRomb(tf_a,tf_e,tf_f,tf_pole,tf_obwod);
-                   break;
+                   if (oblicz.validateString(tf_a,tf_e,tf_f)) {
+                       oblicz.obliczRomb(tf_a,tf_e,tf_f,tf_pole,tf_obwod);
+                       tf_info.setText("Obliczono pole i obwód Rombu");
+                       break;
+                   }
+                   else {
+                       tf_info.setText("Niepoprawne dane");
+                       tf_pole.clear();
+                       tf_obwod.clear();
+                       break;
+                   }
                case 5:
-                   oblicz.obliczTrojkat(tf_a,tf_b,tf_c,tf_h,tf_pole,tf_obwod);
-                   break;
+                   if (oblicz.validateString(tf_a,tf_b,tf_c,tf_h)) {
+                       oblicz.obliczTrojkat(tf_a,tf_b,tf_c,tf_h,tf_pole,tf_obwod);
+                       tf_info.setText("Obliczono pole i obwód Trójkąta");
+                       break;
+                   }
+                   else {
+                       tf_info.setText("Niepoprawne dane");
+                       tf_pole.clear();
+                       tf_obwod.clear();
+                       break;
+                   }
                case 6:
-                   oblicz.obliczKolo(tf_r,tf_pole,tf_obwod);
-                   break;
+                   if (oblicz.validateString(tf_r)) {
+                       oblicz.obliczKolo(tf_r,tf_pole,tf_obwod);
+                       tf_info.setText("Obliczono pole i obwód Koła");
+                       break;
+                   }
+                   else {
+                       tf_info.setText("Niepoprawne dane");
+                       tf_pole.clear();
+                       tf_obwod.clear();
+                       break;
+                   }
            }
        }
        System.out.println(cb_wyborFigury.getSelectionModel().getSelectedItem());
    }
-
 }
 
