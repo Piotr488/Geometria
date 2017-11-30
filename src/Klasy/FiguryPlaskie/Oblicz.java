@@ -1,4 +1,6 @@
 package Klasy.FiguryPlaskie;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 
 import java.text.DecimalFormat;
@@ -50,6 +52,99 @@ public class Oblicz {
             }
         }
         return true;
+    }
+
+    public void wynik(RadioButton rb_figuryPlaskie, ComboBox cb_wyborFigury, TextField tf_a, TextField tf_b, TextField tf_c, TextField tf_d, TextField tf_e, TextField tf_f, TextField tf_r){
+        if (rb_figuryPlaskie.isSelected()) {
+            switch (cb_wyborFigury.getSelectionModel().getSelectedIndex()) {
+                case 0:
+                    if (validateString(tf_a)) {
+                        obliczKwadrat(tf_a, tf_pole, tf_obwod);
+                        tf_info.setText("Obliczono pole i obwód Kwadratu");
+                        rysuj.kwadrat(drawShapePane,tf_a);
+                        break;
+                    } else {
+                        tf_info.setText("Niepoprawne dane");
+                        tf_pole.clear();
+                        tf_obwod.clear();
+                        break;
+                    }
+                case 1:
+                    if (validateString(tf_a,tf_b)) {
+                        obliczProstokat(tf_a, tf_b, tf_pole, tf_obwod);
+                        tf_info.setText("Obliczono pole i obwód Prostokątu");
+                        rysuj.prostokat(drawShapePane,tf_a,tf_b);
+                        break;
+                    }
+                    else {
+                        tf_info.setText("Niepoprawne dane");
+                        tf_pole.clear();
+                        tf_obwod.clear();
+                        break;
+                    }
+                case 2:
+                    if (oblicz.validateString(tf_a,tf_b,tf_h)) {
+                        oblicz.obliczRownoleglobok(tf_a,tf_b,tf_h,tf_pole,tf_obwod);
+                        tf_info.setText("Obliczono pole i obwód Równoległoboku");
+                        break;
+                    }
+                    else {
+                        tf_info.setText("Niepoprawne dane");
+                        tf_pole.clear();
+                        tf_obwod.clear();
+                        break;
+                    }
+                case 3:
+                    if (oblicz.validateString(tf_a,tf_b,tf_c,tf_d,tf_h)) {
+                        oblicz.obliczTrapez(tf_a,tf_b,tf_c,tf_d,tf_h,tf_pole,tf_obwod);
+                        tf_info.setText("Obliczono pole i obwód Trapezu");
+                        break;
+                    }
+                    else {
+                        tf_info.setText("Niepoprawne dane");
+                        tf_pole.clear();
+                        tf_obwod.clear();
+                        break;
+                    }
+                case 4:
+                    if (oblicz.validateString(tf_a,tf_e,tf_f)) {
+                        oblicz.obliczRomb(tf_a,tf_e,tf_f,tf_pole,tf_obwod);
+                        tf_info.setText("Obliczono pole i obwód Rombu");
+                        break;
+                    }
+                    else {
+                        tf_info.setText("Niepoprawne dane");
+                        tf_pole.clear();
+                        tf_obwod.clear();
+                        break;
+                    }
+                case 5:
+                    if (oblicz.validateString(tf_a,tf_b,tf_c,tf_h)) {
+                        oblicz.obliczTrojkat(tf_a,tf_b,tf_c,tf_h,tf_pole,tf_obwod);
+                        tf_info.setText("Obliczono pole i obwód Trójkąta");
+                        break;
+                    }
+                    else {
+                        tf_info.setText("Niepoprawne dane");
+                        tf_pole.clear();
+                        tf_obwod.clear();
+                        break;
+                    }
+                case 6:
+                    if (oblicz.validateString(tf_r)) {
+                        oblicz.obliczKolo(tf_r,tf_pole,tf_obwod);
+                        tf_info.setText("Obliczono pole i obwód Koła");
+                        break;
+                    }
+                    else {
+                        tf_info.setText("Niepoprawne dane");
+                        tf_pole.clear();
+                        tf_obwod.clear();
+                        break;
+                    }
+            }
+        }
+        System.out.println(cb_wyborFigury.getSelectionModel().getSelectedItem());
     }
 
 }

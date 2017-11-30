@@ -9,10 +9,12 @@
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+<VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
       <children>
       <GridPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="600.0">
         <columnConstraints>
@@ -84,10 +86,11 @@
         </rowConstraints>
          <children>
             <Button mnemonicParsing="false" onAction="#wynik" prefHeight="25.0" prefWidth="109.0" text="Oblicz" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-            <Label text="Info:"  GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <Label text="Info:" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
             <TextField fx:id="tf_info" editable="false" GridPane.columnIndex="2" />
          </children>
       </GridPane>
+      <Separator layoutX="10.0" layoutY="205.0" opacity="0.0" orientation="VERTICAL" prefHeight="20.0" />
       <GridPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="600.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="10.0" />
@@ -102,13 +105,20 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Pole:" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-            <Label layoutX="10.0" layoutY="13.0" text="Obwod:" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-            <Label layoutX="210.0" layoutY="13.0" text="Objetosc:" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-            <TextField fx:id="tf_pole" editable="false" GridPane.columnIndex="1" />
-            <TextField fx:id="tf_obwod" editable="false" layoutX="65.0" layoutY="21.0" GridPane.columnIndex="3" />
-            <TextField fx:id="tf_objetosc" editable="false" layoutX="265.0" layoutY="21.0" GridPane.columnIndex="5" />
+            <Label text="Pole:" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <Label layoutX="10.0" layoutY="13.0" text="Obwod:" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <Label layoutX="210.0" layoutY="13.0" text="Objetosc:" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <TextField fx:id="tf_pole" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="tf_obwod" editable="false" layoutX="65.0" layoutY="21.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <TextField fx:id="tf_objetosc" editable="false" layoutX="265.0" layoutY="21.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
          </children>
       </GridPane>
+      <Separator layoutX="10.0" layoutY="243.0" opacity="0.0" orientation="VERTICAL" prefHeight="20.0" />
+      <Label prefHeight="31.0" prefWidth="180.0" text="Prezentacja Figury">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Pane fx:id="drawShapePane" prefHeight="300.0" prefWidth="600.0" style="-fx-border-color: black; -fx-border-width: 3px;" />
       </children>
 </VBox>

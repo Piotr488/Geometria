@@ -1,12 +1,15 @@
 import Klasy.FiguryPlaskie.Oblicz;
+import Klasy.FiguryPlaskie.Rysuj;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
+import javafx.scene.shape.Rectangle;
 
-import java.lang.reflect.InvocationTargetException;
+import java.awt.*;
 
 public class Controller {
     @FXML
@@ -39,8 +42,11 @@ public class Controller {
     TextField tf_obwod;
     @FXML
     TextField tf_info;
+    @FXML
+    Pane drawShapePane;
 
     Oblicz oblicz = new Oblicz();
+    Rysuj rysuj = new Rysuj();
 
     ObservableList<String> figuryPlaskie =  FXCollections.observableArrayList("Kwadrat","Prostokąt","Równoległobok","Trapez","Romb","Trójkąt","Koło");
     ObservableList<String> figuryPrzestrzenne =  FXCollections.observableArrayList("Sześcian","Stożek","Kula");
@@ -114,7 +120,7 @@ public class Controller {
             }
         }
     }
-    void disableAllTF() {
+    private void disableAllTF() {
         tf_a.setDisable(true);
         tf_a.clear();
         tf_b.setDisable(true);
@@ -132,6 +138,7 @@ public class Controller {
         tf_r.setDisable(true);
         tf_r.clear();
     }
+
    public void wynik(){
        if (rb_figuryPlaskie.isSelected()) {
            switch (cb_wyborFigury.getSelectionModel().getSelectedIndex()) {
@@ -139,6 +146,7 @@ public class Controller {
                    if (oblicz.validateString(tf_a)) {
                        oblicz.obliczKwadrat(tf_a, tf_pole, tf_obwod);
                        tf_info.setText("Obliczono pole i obwód Kwadratu");
+                       rysuj.kwadrat(drawShapePane,tf_a);
                        break;
                    } else {
                        tf_info.setText("Niepoprawne dane");
@@ -150,6 +158,7 @@ public class Controller {
                    if (oblicz.validateString(tf_a,tf_b)) {
                        oblicz.obliczProstokat(tf_a, tf_b, tf_pole, tf_obwod);
                        tf_info.setText("Obliczono pole i obwód Prostokątu");
+                       rysuj.prostokat(drawShapePane,tf_a,tf_b);
                        break;
                    }
                    else {
