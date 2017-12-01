@@ -98,7 +98,9 @@ public class Rysuj {
         p.setStroke(Color.BLACK);
         p.setStrokeWidth(2);
 
-        l_a.setLayoutX(drawShapePane.getWidth()/2);
+
+        double length = (drawShapePane.getWidth() - (Double.parseDouble(tf_a.getText()) * cmToPixel + x * cmToPixel)) / 2;
+        l_a.setLayoutX(length + (Double.parseDouble(tf_a.getText()) * cmToPixel / 2));
         l_a.setLayoutY((drawShapePane.getHeight()/2-(Double.parseDouble(tf_h.getText())) / 2) + ((Double.parseDouble(tf_h.getText()) * cmToPixel) / 2 + 10));
 
         l_b.setLayoutX((drawShapePane.getWidth()/2-((Double.parseDouble(tf_a.getText()) + x) / 2))+(Double.parseDouble(tf_a.getText()) * cmToPixel + x)/2 + 10);
