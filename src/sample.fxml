@@ -34,7 +34,7 @@
             <RadioButton fx:id="rb_figuryPrzestrzenne" mnemonicParsing="false" onAction="#changeCBContent" text="Figury Przestrzenne" toggleGroup="$Figury" GridPane.rowIndex="1" />
             <ComboBox fx:id="cb_wyborFigury" onAction="#setup" prefWidth="150.0" GridPane.columnIndex="2" />
             <ComboBox fx:id="cb_jednostki" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Label text="Wybor Figury:" GridPane.columnIndex="1" />
+            <Label prefHeight="17.0" prefWidth="77.0" text="Wybor Figury:" GridPane.columnIndex="1" />
             <Label text="Jednostki" GridPane.columnIndex="1" GridPane.rowIndex="1" />
          </children>
       </GridPane>

@@ -1,10 +1,13 @@
 package Klasy.FiguryPlaskie;
 
+import javafx.geometry.Pos;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.*;
+import javafx.scene.text.TextAlignment;
 
 public class Rysuj {
     private double cmToPixel = 37.795276;
@@ -27,7 +30,17 @@ public class Rysuj {
         r.setX(drawShapePane.getWidth()/2-r.getWidth()/2);
         r.setY(drawShapePane.getHeight()/2-r.getHeight()/2);
 
-        drawShapePane.getChildren().add(r);
+        Label l_a = new Label( tf_a.getText() + "cm");
+
+        l_a.setLayoutX(drawShapePane.getWidth()/2);
+        l_a.setLayoutY(drawShapePane.getHeight()/2+r.getHeight()/2+10);
+
+        Label l_b = new Label( tf_a.getText() + "cm");
+
+        l_b.setLayoutX(drawShapePane.getWidth()/2+r.getWidth()/2+10);
+        l_b.setLayoutY(drawShapePane.getHeight()/2);
+
+        drawShapePane.getChildren().addAll(r,l_a,l_b);
     }
     public void prostokat(Pane drawShapePane, ComboBox cb_jednostki, TextField tf_a, TextField tf_b){
         drawShapePane.getChildren().clear();
@@ -46,7 +59,17 @@ public class Rysuj {
         r.setX(drawShapePane.getWidth()/2-r.getWidth()/2);
         r.setY(drawShapePane.getHeight()/2-r.getHeight()/2);
 
-        drawShapePane.getChildren().add(r);
+        Label l_a = new Label( tf_a.getText() + "cm");
+
+        l_a.setLayoutX(drawShapePane.getWidth()/2);
+        l_a.setLayoutY(drawShapePane.getHeight()/2+r.getHeight()/2+10);
+
+        Label l_b = new Label( tf_b.getText() + "cm");
+
+        l_b.setLayoutX(drawShapePane.getWidth()/2+r.getWidth()/2+10);
+        l_b.setLayoutY(drawShapePane.getHeight()/2);
+
+        drawShapePane.getChildren().addAll(r,l_a,l_b);
     }
     public void rownoleglobok(Pane drawShapePane, ComboBox cb_jednostki, TextField tf_a ,TextField tf_b, TextField tf_h){
         drawShapePane.getChildren().clear();
@@ -54,10 +77,21 @@ public class Rysuj {
         double x = Math.sqrt(Double.parseDouble(tf_b.getText())*Double.parseDouble(tf_b.getText()) - Double.parseDouble(tf_h.getText())*Double.parseDouble(tf_h.getText()));
 
         Polygon p = new Polygon();
+        Label l_a = new Label();
+        Label l_b = new Label();
+
         if (cb_jednostki.getSelectionModel().getSelectedIndex() == 0) {
             p.getPoints().addAll(x * cmToPixel, 0.0, Double.parseDouble(tf_a.getText())* cmToPixel + x * cmToPixel, 0.0, Double.parseDouble(tf_a.getText()) * cmToPixel, Double.parseDouble(tf_h.getText()) * cmToPixel, 0.0, Double.parseDouble(tf_h.getText()) * cmToPixel);
             p.setLayoutX(drawShapePane.getWidth()/2-((Double.parseDouble(tf_a.getText()) * cmToPixel + x * cmToPixel) / 2));
             p.setLayoutY(drawShapePane.getHeight()/2-(Double.parseDouble(tf_h.getText()) * cmToPixel) / 2);
+
+            l_a.setText(tf_a.getText() + "cm");
+            l_a.setLayoutX(drawShapePane.getWidth()/2-((Double.parseDouble(tf_a.getText()) + x) / 2));
+            l_a.setLayoutY(drawShapePane.getHeight()/2-(Double.parseDouble(tf_h.getText())) / 2);
+
+            l_b.setText(tf_b.getText() + "cm");
+            l_b.setLayoutX(drawShapePane.getWidth()/2-((Double.parseDouble(tf_a.getText()) + x) / 2));
+            l_b.setLayoutY(drawShapePane.getHeight()/2-(Double.parseDouble(tf_h.getText())) / 2);
         }
         else if (cb_jednostki.getSelectionModel().getSelectedIndex() == 1){
             p.getPoints().addAll(x * mmToPixel, 0.0, Double.parseDouble(tf_a.getText())* mmToPixel + x * mmToPixel, 0.0, Double.parseDouble(tf_a.getText()) * mmToPixel, Double.parseDouble(tf_h.getText()) * mmToPixel, 0.0, Double.parseDouble(tf_h.getText()) * mmToPixel);
@@ -68,7 +102,8 @@ public class Rysuj {
         p.setStroke(Color.BLACK);
         p.setStrokeWidth(2);
 
-        drawShapePane.getChildren().add(p);
+
+        drawShapePane.getChildren().addAll(p,l_a,l_b);
     }
     public void kolo (Pane drawShapePane, ComboBox cb_jednostki, TextField tf_r){
         drawShapePane.getChildren().clear();
