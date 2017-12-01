@@ -14,6 +14,7 @@ public class Rownoleglobok extends FiguryPlaskie {
 
     @Override
     public double obwod() {
+
         return 2*a+2*b;
     }
 }

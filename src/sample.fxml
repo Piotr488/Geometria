@@ -119,6 +119,6 @@
             <Font size="21.0" />
          </font>
       </Label>
-      <Pane fx:id="drawShapePane" prefHeight="300.0" prefWidth="600.0" style="-fx-border-color: black; -fx-border-width: 3px;" />
+      <Pane fx:id="drawShapePane" prefHeight="600.0" prefWidth="600.0" style="-fx-border-color: black; -fx-border-width: 3px;" />
       </children>
 </VBox>

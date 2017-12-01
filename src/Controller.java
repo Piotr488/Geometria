@@ -3,13 +3,11 @@ import Klasy.FiguryPlaskie.Rysuj;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.canvas.Canvas;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
-import javafx.scene.shape.Rectangle;
-
-import java.awt.*;
 
 public class Controller {
     @FXML
@@ -146,37 +144,50 @@ public class Controller {
                    if (oblicz.validateString(tf_a)) {
                        oblicz.obliczKwadrat(tf_a, tf_pole, tf_obwod);
                        tf_info.setText("Obliczono pole i obwód Kwadratu");
-                       rysuj.kwadrat(drawShapePane,tf_a);
+                       rysuj.kwadrat(drawShapePane, cb_jednostki, tf_a);
                        break;
                    } else {
                        tf_info.setText("Niepoprawne dane");
                        tf_pole.clear();
                        tf_obwod.clear();
+                       drawShapePane.getChildren().clear();
                        break;
                    }
                case 1:
                    if (oblicz.validateString(tf_a,tf_b)) {
                        oblicz.obliczProstokat(tf_a, tf_b, tf_pole, tf_obwod);
                        tf_info.setText("Obliczono pole i obwód Prostokątu");
-                       rysuj.prostokat(drawShapePane,tf_a,tf_b);
+                       rysuj.prostokat(drawShapePane, cb_jednostki, tf_a, tf_b);
                        break;
                    }
                    else {
                        tf_info.setText("Niepoprawne dane");
                        tf_pole.clear();
                        tf_obwod.clear();
+                       drawShapePane.getChildren().clear();
                        break;
                    }
                case 2:
                    if (oblicz.validateString(tf_a,tf_b,tf_h)) {
-                       oblicz.obliczRownoleglobok(tf_a,tf_b,tf_h,tf_pole,tf_obwod);
-                       tf_info.setText("Obliczono pole i obwód Równoległoboku");
-                       break;
+                       if (Double.parseDouble(tf_b.getText())>=(Double.parseDouble(tf_h.getText()))) {
+                           oblicz.obliczRownoleglobok(tf_a, tf_b, tf_h, tf_pole, tf_obwod);
+                           tf_info.setText("Obliczono pole i obwód Równoległoboku");
+                           rysuj.rownoleglobok(drawShapePane, cb_jednostki, tf_a, tf_b, tf_h);
+                           break;
+                       }
+                       else{
+                           tf_info.setText("Długość b nie może być mniejsza niż długość h");
+                           tf_pole.clear();
+                           tf_obwod.clear();
+                           drawShapePane.getChildren().clear();
+                           break;
+                       }
                    }
                    else {
                        tf_info.setText("Niepoprawne dane");
                        tf_pole.clear();
                        tf_obwod.clear();
+                       drawShapePane.getChildren().clear();
                        break;
                    }
                case 3:
@@ -189,6 +200,7 @@ public class Controller {
                        tf_info.setText("Niepoprawne dane");
                        tf_pole.clear();
                        tf_obwod.clear();
+                       drawShapePane.getChildren().clear();
                        break;
                    }
                case 4:
@@ -201,30 +213,35 @@ public class Controller {
                        tf_info.setText("Niepoprawne dane");
                        tf_pole.clear();
                        tf_obwod.clear();
+                       drawShapePane.getChildren().clear();
                        break;
                    }
                case 5:
                    if (oblicz.validateString(tf_a,tf_b,tf_c,tf_h)) {
                        oblicz.obliczTrojkat(tf_a,tf_b,tf_c,tf_h,tf_pole,tf_obwod);
                        tf_info.setText("Obliczono pole i obwód Trójkąta");
+                       rysuj.trojkat(drawShapePane, cb_jednostki,tf_a,tf_b,tf_c,tf_h);
                        break;
                    }
                    else {
                        tf_info.setText("Niepoprawne dane");
                        tf_pole.clear();
                        tf_obwod.clear();
+                       drawShapePane.getChildren().clear();
                        break;
                    }
                case 6:
                    if (oblicz.validateString(tf_r)) {
                        oblicz.obliczKolo(tf_r,tf_pole,tf_obwod);
                        tf_info.setText("Obliczono pole i obwód Koła");
+                       rysuj.kolo(drawShapePane, cb_jednostki,tf_r);
                        break;
                    }
                    else {
                        tf_info.setText("Niepoprawne dane");
                        tf_pole.clear();
                        tf_obwod.clear();
+                       drawShapePane.getChildren().clear();
                        break;
                    }
            }
