@@ -63,14 +63,10 @@
       <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1402">
-              <caret line="219" column="68" lean-forward="true" selection-start-line="219" selection-start-column="68" selection-end-line="219" selection-end-column="68" />
+            <state relative-caret-position="2025">
+              <caret line="252" column="0" lean-forward="false" selection-start-line="252" selection-start-column="0" selection-end-line="252" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#initialize#0;class#Controller#0" expanded="false" />
-                <element signature="method#changeCBContent#0;class#Controller#0" expanded="false" />
-                <element signature="method#setup#0;class#Controller#0" expanded="false" />
-                <element signature="method#disableAllTF#0;class#Controller#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -79,8 +75,8 @@
       <file leaf-file-name="Rysuj.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Klasy/FiguryPlaskie/Rysuj.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1128">
-              <caret line="7" column="28" lean-forward="false" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+            <state relative-caret-position="326">
+              <caret line="100" column="51" lean-forward="true" selection-start-line="100" selection-start-column="51" selection-end-line="100" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#kolo#0;class#Rysuj#0" expanded="false" />
@@ -93,7 +89,7 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
+            <state relative-caret-position="200">
               <caret line="12" column="54" lean-forward="false" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
               <folding />
             </state>
@@ -106,11 +102,11 @@
             <state />
           </provider>
           <provider editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="34" column="56" lean-forward="false" selection-start-line="34" selection-start-column="56" selection-end-line="34" selection-end-column="56" />
+            <state relative-caret-position="900">
+              <caret line="36" column="56" lean-forward="false" selection-start-line="36" selection-start-column="56" selection-end-line="36" selection-end-column="56" />
               <folding>
-                <marker date="1512089515069" expanded="true" signature="8751:8899" ph="..." />
-                <marker date="1512089515069" expanded="true" signature="8751:8907" ph="..." />
+                <marker date="1512140900951" expanded="true" signature="8881:8899" ph="..." />
+                <marker date="1512140900951" expanded="true" signature="8881:8907" ph="..." />
               </folding>
             </state>
           </provider>
@@ -197,8 +193,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -222,6 +216,8 @@
         </subPane>
       </pane>
       <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -445,7 +441,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -456,7 +452,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914287" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20148462" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20068808" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -551,10 +547,6 @@
           <caret line="32" column="79" lean-forward="false" selection-start-line="32" selection-start-column="79" selection-end-line="32" selection-end-column="79" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
-            <element signature="method#changeCBContent#0;class#Controller#0" expanded="false" />
-            <element signature="method#setup#0;class#Controller#0" expanded="false" />
-            <element signature="method#disableAllTF#0;class#Controller#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -565,10 +557,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
-            <element signature="method#changeCBContent#0;class#Controller#0" expanded="false" />
-            <element signature="method#setup#0;class#Controller#0" expanded="false" />
-            <element signature="method#disableAllTF#0;class#Controller#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -707,17 +695,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Klasy/Setup.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-448">
-          <caret line="12" column="38" lean-forward="false" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Klasy/Setup.java" />
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
+        <state relative-caret-position="200">
           <caret line="12" column="54" lean-forward="false" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
           <folding />
         </state>
@@ -741,14 +722,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1402">
-          <caret line="219" column="68" lean-forward="true" selection-start-line="219" selection-start-column="68" selection-end-line="219" selection-end-column="68" />
+        <state relative-caret-position="2025">
+          <caret line="252" column="0" lean-forward="false" selection-start-line="252" selection-start-column="0" selection-end-line="252" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
-            <element signature="method#changeCBContent#0;class#Controller#0" expanded="false" />
-            <element signature="method#setup#0;class#Controller#0" expanded="false" />
-            <element signature="method#disableAllTF#0;class#Controller#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -758,19 +735,19 @@
         <state />
       </provider>
       <provider editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="34" column="56" lean-forward="false" selection-start-line="34" selection-start-column="56" selection-end-line="34" selection-end-column="56" />
+        <state relative-caret-position="900">
+          <caret line="36" column="56" lean-forward="false" selection-start-line="36" selection-start-column="56" selection-end-line="36" selection-end-column="56" />
           <folding>
-            <marker date="1512089515069" expanded="true" signature="8751:8899" ph="..." />
-            <marker date="1512089515069" expanded="true" signature="8751:8907" ph="..." />
+            <marker date="1512140900951" expanded="true" signature="8881:8899" ph="..." />
+            <marker date="1512140900951" expanded="true" signature="8881:8907" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Klasy/FiguryPlaskie/Rysuj.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1128">
-          <caret line="7" column="28" lean-forward="false" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+        <state relative-caret-position="326">
+          <caret line="100" column="51" lean-forward="true" selection-start-line="100" selection-start-column="51" selection-end-line="100" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#kolo#0;class#Rysuj#0" expanded="false" />

@@ -84,22 +84,25 @@ public class Rysuj {
             p.setLayoutY(drawShapePane.getHeight()/2-(Double.parseDouble(tf_h.getText()) * cmToPixel) / 2);
 
             l_a.setText(tf_a.getText() + "cm");
-            l_a.setLayoutX(drawShapePane.getWidth()/2-((Double.parseDouble(tf_a.getText()) + x) / 2));
-            l_a.setLayoutY(drawShapePane.getHeight()/2-(Double.parseDouble(tf_h.getText())) / 2);
-
             l_b.setText(tf_b.getText() + "cm");
-            l_b.setLayoutX(drawShapePane.getWidth()/2-((Double.parseDouble(tf_a.getText()) + x) / 2));
-            l_b.setLayoutY(drawShapePane.getHeight()/2-(Double.parseDouble(tf_h.getText())) / 2);
         }
         else if (cb_jednostki.getSelectionModel().getSelectedIndex() == 1){
             p.getPoints().addAll(x * mmToPixel, 0.0, Double.parseDouble(tf_a.getText())* mmToPixel + x * mmToPixel, 0.0, Double.parseDouble(tf_a.getText()) * mmToPixel, Double.parseDouble(tf_h.getText()) * mmToPixel, 0.0, Double.parseDouble(tf_h.getText()) * mmToPixel);
             p.setLayoutX(drawShapePane.getWidth()/2-((Double.parseDouble(tf_a.getText()) * mmToPixel + x * mmToPixel) / 2));
             p.setLayoutY(drawShapePane.getHeight()/2-(Double.parseDouble(tf_h.getText()) * mmToPixel) / 2);
+
+            l_a.setText(tf_a.getText() + "mm");
+            l_b.setText(tf_b.getText() + "mm");
         }
         p.setFill(null);
         p.setStroke(Color.BLACK);
         p.setStrokeWidth(2);
 
+        l_a.setLayoutX(drawShapePane.getWidth()/2);
+        l_a.setLayoutY((drawShapePane.getHeight()/2-(Double.parseDouble(tf_h.getText())) / 2) + ((Double.parseDouble(tf_h.getText()) * cmToPixel) / 2 + 10));
+
+        l_b.setLayoutX((drawShapePane.getWidth()/2-((Double.parseDouble(tf_a.getText()) + x) / 2))+(Double.parseDouble(tf_a.getText()) * cmToPixel + x)/2 + 10);
+        l_b.setLayoutY(drawShapePane.getHeight()/2-(Double.parseDouble(tf_h.getText())) / 2);
 
         drawShapePane.getChildren().addAll(p,l_a,l_b);
     }
